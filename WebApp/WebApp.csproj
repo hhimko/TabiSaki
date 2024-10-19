@@ -7,4 +7,8 @@
     <UserSecretsId>63ad67d6-7ef6-4864-b36a-87b14cbc6edf</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LeafletClient\LeafletClient.csproj" />
+  </ItemGroup>
+
 </Project>
