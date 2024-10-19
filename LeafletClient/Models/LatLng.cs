@@ -1,8 +1,7 @@
 ﻿namespace LeafletClient.Models
 {
-    public readonly record struct LatLng
+    public readonly record struct LatLng(double Latitude, double Longitude)
     {
-        public double Latitude { get; init; }
-        public double Longitude { get; init; }
+
     }
 }

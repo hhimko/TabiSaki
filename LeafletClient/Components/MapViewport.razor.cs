@@ -15,35 +15,38 @@ namespace LeafletClient.Components
         [Parameter]
         public required string MapTilerStyle { get; set; }
 
-        private Lazy<Task<IJSObjectReference>>? _moduleTask;
-        private bool IsModuleCreated => _moduleTask != null && _moduleTask.IsValueCreated;
+        public delegate void OnMapInitializedHandler();
+        public delegate Task OnMapInitializedHandlerAsync();
+        public event OnMapInitializedHandler? OnMapInitialized;
+        public event OnMapInitializedHandlerAsync? OnMapInitializedAsync;
 
+        private IJSObjectReference? _module;
         private ElementReference _viewportElement;
         private IJSObjectReference? _leafletContext;
+
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             if (firstRender)
             {
-                _moduleTask = new Lazy<Task<IJSObjectReference>>(
-                    () => JSRuntime.InvokeAsync<IJSObjectReference>(
-                        "import", "./_content/LeafletClient/Components/MapViewport.razor.js"
-                    ).AsTask()
+                _module = await JSRuntime.InvokeAsync<IJSObjectReference>(
+                    "import", "./_content/LeafletClient/Components/MapViewport.razor.js"
                 );
 
-                var module = await _moduleTask!.Value;
-                _leafletContext = await module.InvokeAsync<IJSObjectReference>(
+                _leafletContext = await _module.InvokeAsync<IJSObjectReference>(
                     "initialize", _viewportElement, MapTilerApiKey, MapTilerStyle
                 );
+
+                OnMapInitialized?.Invoke();
+                OnMapInitializedAsync?.Invoke();
             }
         }
 
         public async Task SetView(LatLng latLng, int zoom)
         {
-            if (IsModuleCreated)
+            if (_module is not null)
             {
-                var module = await _moduleTask!.Value;
-                await module.InvokeVoidAsync(
+                await _module.InvokeVoidAsync(
                     "setView", _leafletContext, latLng.Latitude, latLng.Longitude, zoom
                 );
             }
@@ -51,12 +54,11 @@ namespace LeafletClient.Components
 
         public async ValueTask DisposeAsync()
         {
-            if (IsModuleCreated)
+            if (_module is not null)
             {
-                var module = await _moduleTask!.Value;
                 try
                 {
-                    await module.DisposeAsync();
+                    await _module.DisposeAsync();
                 }
                 catch (JSDisconnectedException)
                 {

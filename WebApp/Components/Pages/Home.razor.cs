@@ -14,10 +14,17 @@ namespace WebApp.Components.Pages
 
         private string MapTilerApiKey => Settings.Value.MapTilerApiKey;
 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override void OnAfterRender(bool firstRender)
         {
-            await Task.Delay(200);
-            await MapViewport.SetView(new LatLng(), 5);
+            if (firstRender)
+            {
+                MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
+            }
+        }
+
+        private async Task OnMapInitializedAsync()
+        {
+            await MapViewport.SetView(new LatLng(35.8, 139.6), 9);
         }
     }
 }
