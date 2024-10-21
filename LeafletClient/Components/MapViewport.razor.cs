@@ -15,6 +15,8 @@ namespace LeafletClient.Components
         [Parameter]
         public required string MapTilerStyle { get; set; }
 
+        public bool IsInitialized => _module is not null && _context is not null;
+
         public delegate void OnMapInitializedHandler();
         public delegate Task OnMapInitializedHandlerAsync();
         public event OnMapInitializedHandler? OnMapInitialized;
@@ -22,7 +24,7 @@ namespace LeafletClient.Components
 
         private IJSObjectReference? _module;
         private ElementReference _viewportElement;
-        private IJSObjectReference? _leafletContext;
+        private IJSObjectReference? _context;
 
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -33,21 +35,26 @@ namespace LeafletClient.Components
                     "import", "./_content/LeafletClient/Components/MapViewport.razor.js"
                 );
 
-                _leafletContext = await _module.InvokeAsync<IJSObjectReference>(
-                    "initialize", _viewportElement, MapTilerApiKey, MapTilerStyle
-                );
-
-                OnMapInitialized?.Invoke();
-                OnMapInitializedAsync?.Invoke();
+                await InitializeModuleAsync();
             }
         }
 
-        public async Task SetView(LatLng latLng, int zoom)
+        public async Task SetViewAsync(LatLng latLng, int zoom)
         {
-            if (_module is not null)
+            if (IsInitialized)
             {
-                await _module.InvokeVoidAsync(
-                    "setView", _leafletContext, latLng.Latitude, latLng.Longitude, zoom
+                await _module!.InvokeVoidAsync(
+                    "setView", _context, latLng, zoom
+                );
+            }
+        }
+
+        public async Task SetMarkerAsync(Marker marker)
+        {
+            if (IsInitialized)
+            {
+                await _module!.InvokeVoidAsync(
+                    "setMarker", _context, marker
                 );
             }
         }
@@ -63,6 +70,27 @@ namespace LeafletClient.Components
                 catch (JSDisconnectedException)
                 {
                     // Ignore
+                }
+            }
+        }
+
+        private async Task InitializeModuleAsync()
+        {
+            if (_module is not null)
+            {
+                var contextOptions = new { };
+                _context = await _module.InvokeAsync<IJSObjectReference>(
+                    "createContext", contextOptions
+                );
+
+                if (_context is not null)
+                {
+                    await _module.InvokeVoidAsync(
+                        "initialize", _context, _viewportElement, MapTilerApiKey, MapTilerStyle
+                    );
+
+                    OnMapInitialized?.Invoke();
+                    OnMapInitializedAsync?.Invoke();
                 }
             }
         }

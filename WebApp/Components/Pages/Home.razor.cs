@@ -14,6 +14,7 @@ namespace WebApp.Components.Pages
 
         private string MapTilerApiKey => Settings.Value.MapTilerApiKey;
 
+
         protected override void OnAfterRender(bool firstRender)
         {
             if (firstRender)
@@ -24,7 +25,9 @@ namespace WebApp.Components.Pages
 
         private async Task OnMapInitializedAsync()
         {
-            await MapViewport.SetView(new LatLng(35.8, 139.6), 9);
+            var latLng = new LatLng(35.8, 139.6);
+            await MapViewport.SetViewAsync(latLng, 9);
+            await MapViewport.SetMarkerAsync(new Marker(0, latLng, cssClassName: "test-marker"));
         }
     }
 }

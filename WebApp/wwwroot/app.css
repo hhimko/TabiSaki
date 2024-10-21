@@ -1,5 +1,6 @@
-h1:focus {
-    outline: none;
+.leaflet-marker-icon.test-marker {
+    background-color: red;
+    border-radius: 9999px;
 }
 
 .valid.modified:not([type=checkbox]) {
