@@ -5,6 +5,6 @@ namespace WebApp
     public class AppSettings
     {
         [Required]
-        public string MapTilerApiKey { get; set; }
+        public required string MapTilerApiKey { get; set; }
     }
 }
