@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.WebApp", "WebApp\TabiSaki.WebApp.csproj", "{F5C9619C-299B-4C35-9966-4D227862B5B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.WebApp", "TabiSaki.WebApp\TabiSaki.WebApp.csproj", "{F5C9619C-299B-4C35-9966-4D227862B5B8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeafletClient", "LeafletClient\LeafletClient.csproj", "{F8CE8E9D-EF94-4AF1-8D8B-295FFCFA2FBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Domain", "Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Domain", "TabiSaki.Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Application", "TabiSaki.Application\TabiSaki.Application.csproj", "{673C7206-C7C0-45AC-BFCC-977067F97B15}"
 EndProject

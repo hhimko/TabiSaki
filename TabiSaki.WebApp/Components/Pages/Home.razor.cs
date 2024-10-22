@@ -24,8 +24,6 @@ public partial class Home : ComponentBase
         if (firstRender)
         {
             MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
-
-            LocationService.GetAll();
         }
     }
 
