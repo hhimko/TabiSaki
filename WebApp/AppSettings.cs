@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApp
+namespace TabiSaki.WebApp;
+
+public class AppSettings
 {
-    public class AppSettings
-    {
-        [Required]
-        public required string MapTilerApiKey { get; set; }
-    }
+    [Required]
+    public required string MapTilerApiKey { get; init; }
+
 }

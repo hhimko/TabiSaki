@@ -1,5 +1,5 @@
-using WebApp;
-using WebApp.Components;
+using TabiSaki.WebApp;
+using TabiSaki.WebApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
