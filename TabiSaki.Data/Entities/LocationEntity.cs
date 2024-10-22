@@ -13,6 +13,6 @@ internal class LocationEntity
 
     public required double Longitude { get; set; }
 
-    public ICollection<LocationSpotEntity> Spots { get; set; } = [];
+    public virtual ICollection<LocationSpotEntity> Spots { get; set; } = [];
 
 }

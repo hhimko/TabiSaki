@@ -27,13 +27,19 @@ internal class LocationRepository : ILocationRepository
 
     public async Task<IEnumerable<Location>> GetAll()
     {
-        var locations = await _context.Locations.ToListAsync();
+        var locations = await _context.Locations
+            .Include(l => l.Spots)
+            .ToListAsync();
+
         return _mapper.Map<List<LocationEntity>, List<Location>>(locations);
     }
 
     public async Task<Location?> GetById(long id)
     {
-        var location = await _context.Locations.FindAsync(id);
+        var location = await _context.Locations
+            .Include(l => l.Spots)
+            .FirstOrDefaultAsync(l => l.Id == id);
+
         return location == null ? null : _mapper.Map<LocationEntity, Location>(location);
     }
 

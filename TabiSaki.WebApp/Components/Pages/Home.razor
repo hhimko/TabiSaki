@@ -3,6 +3,29 @@
 
 <PageTitle>Home</PageTitle>
 
-<div id="viewport-container" style="width: 1200px; height: 600px;">
-    <MapViewport MapTilerApiKey="@MapTilerApiKey" MapTilerStyle="66e6da85-1e0d-40c5-a498-f5f9ff323a5a" @ref="MapViewport" />
-</div>
+<section id="main-section">
+    <div id="viewport-container">
+        <MapViewport MapTilerApiKey="@MapTilerApiKey" MapTilerStyle="66e6da85-1e0d-40c5-a498-f5f9ff323a5a" @ref="MapViewport" />
+    </div>
+
+    <div id="marker-container">
+        @if (_locations is null)
+        {
+            <p>Loading...</p>
+        }
+        else
+        {
+            @foreach (var location in _locations)
+            {
+                <div class="marker-card">
+                    @{ var spot = location.Spots.FirstOrDefault(defaultValue: null); }
+                    @if (spot != null)
+                    {
+                        @spot.Name
+                    }
+                </div>
+            }
+        }
+    </div>
+</section>
+

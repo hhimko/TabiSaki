@@ -30,6 +30,7 @@ internal class LocationService : ILocationService
     {
         return await _repository.GetAll();
     }
+
     public async Task<Location?> GetById(long id)
     {
         return await _repository.GetById(id);

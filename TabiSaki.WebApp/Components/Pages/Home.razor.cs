@@ -3,6 +3,7 @@ using LeafletClient.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
 using TabiSaki.Application.Services;
+using TabiSaki.Domain.Models;
 
 namespace TabiSaki.WebApp.Components.Pages;
 
@@ -18,12 +19,17 @@ public partial class Home : ComponentBase
 
     private string MapTilerApiKey => Settings.Value.MapTilerApiKey;
 
+    private IEnumerable<Location>? _locations;
 
-    protected override void OnAfterRender(bool firstRender)
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
+
+            _locations = await LocationService.GetAll();
+            StateHasChanged();
         }
     }
 
@@ -32,11 +38,13 @@ public partial class Home : ComponentBase
         var latLng = new LatLng(35.8, 139.6);
         await MapViewport.SetViewAsync(latLng, 9);
 
-        var locations = await LocationService.GetAll();
-        foreach (var location in locations)
+        if (_locations is not null)
         {
-            var marker = new Marker(location.Id, new LatLng(location.Latitude, location.Longitude), cssClassName: "test-marker");
-            await MapViewport.SetMarkerAsync(marker);
+            foreach (var location in _locations)
+            {
+                var marker = new Marker(location.Id, new LatLng(location.Latitude, location.Longitude), cssClassName: "test-marker");
+                await MapViewport.SetMarkerAsync(marker);
+            }
         }
     }
 }

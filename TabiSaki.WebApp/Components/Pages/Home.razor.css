@@ -1,1 +1,31 @@
-﻿
+﻿#main-section {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #111;
+    gap: 22px;
+}
+
+#viewport-container {
+    width: 70%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#marker-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 12px;
+    padding: 12px;
+    flex-grow: 1;
+    color: white;
+    gap: 8px;
+}
+
+.marker-card {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 6px 10px;
+}

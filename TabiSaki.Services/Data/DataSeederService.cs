@@ -14,18 +14,24 @@ public class DataSeederService
 
     public async Task SeedSampleDataAsync()
     {
-        await _locationService.Create(new Location()
+        await _locationService.Create(new Location
         {
             Id = 1,
-            Latitude = 35.8,
-            Longitude = 139.6
+            Latitude = 35.649269,
+            Longitude = 139.789665,
+            Spots = [ 
+                new LocationSpot { Id = 1, Name = "Test1" }
+            ]
         });
 
-        await _locationService.Create(new Location()
+        await _locationService.Create(new Location
         {
             Id = 2,
             Latitude = 35.7,
-            Longitude = 139.7
+            Longitude = 139.7,
+            Spots = [
+                new LocationSpot { Id = 2, Name = "Test2" }
+            ]
         });
     }
 }

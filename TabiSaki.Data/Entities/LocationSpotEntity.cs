@@ -12,6 +12,6 @@ internal class LocationSpotEntity
     [MaxLength(64)]
     public required string Name { get; set; } = String.Empty;
 
-    public required long LocationId { get; init; }
+    public virtual required long LocationId { get; init; }
 
 }
