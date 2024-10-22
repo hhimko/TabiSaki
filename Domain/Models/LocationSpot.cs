@@ -2,8 +2,8 @@
 
 public class LocationSpot
 {
-    public required long Id { get; init; }
+    public required Guid Id { get; init; }
 
-    public string? Name { get; set; }
+    public string Name { get; set; } = String.Empty;
 
 }

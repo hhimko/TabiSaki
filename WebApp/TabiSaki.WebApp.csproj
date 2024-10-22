@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LeafletClient\LeafletClient.csproj" />
+    <ProjectReference Include="..\TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj" />
+    <ProjectReference Include="..\TabiSaki.Application\TabiSaki.Application.csproj" />
   </ItemGroup>
 
 </Project>

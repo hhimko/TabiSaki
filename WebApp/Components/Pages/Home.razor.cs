@@ -2,6 +2,7 @@
 using LeafletClient.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
+using TabiSaki.Application.Services;
 
 namespace TabiSaki.WebApp.Components.Pages;
 
@@ -9,6 +10,9 @@ public partial class Home : ComponentBase
 {
     [Inject]
     private IOptions<AppSettings> Settings { get; init; } = default!;
+
+    [Inject]
+    private ILocationService LocationService { get; init; } = default!;
 
     private MapViewport MapViewport { get; set; } = default!;
 
@@ -20,6 +24,8 @@ public partial class Home : ComponentBase
         if (firstRender)
         {
             MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
+
+            LocationService.GetAll();
         }
     }
 

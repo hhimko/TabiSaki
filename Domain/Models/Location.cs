@@ -2,12 +2,12 @@
 
 public class Location
 {
-    public required long Id { get; init; }
+    public required Guid Id { get; init; }
 
-    public double Latitude { get; set; }
+    public required double Latitude { get; set; }
 
-    public double Longitude { get; set; }
+    public required double Longitude { get; set; }
 
-    public IEnumerable<LocationSpot> Spots { get; set; } = [];
+    public ICollection<LocationSpot> Spots { get; set; } = [];
 
 }
