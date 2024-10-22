@@ -1,6 +1,8 @@
-﻿using TabiSaki.Data.Database;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TabiSaki.Data.Database;
 using TabiSaki.Data.Entities;
-using TabiSaki.Data.Interfaces;
+using TabiSaki.Data.Repositories.Interfaces;
 using TabiSaki.Domain.Models;
 
 namespace TabiSaki.Data.Repositories;
@@ -8,20 +10,35 @@ namespace TabiSaki.Data.Repositories;
 internal class LocationRepository : ILocationRepository
 {
     private readonly AppDbContext _context;
+    private readonly IMapper _mapper;
 
-
-    public LocationRepository(AppDbContext context)
+    public LocationRepository(AppDbContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
 
-    public IEnumerable<Location> GetAll()
+    public async Task<Location?> Create(Location location)
     {
-        return [];
+        var mapped = _mapper.Map<Location, LocationEntity>(location);
+        await _context.Locations.AddAsync(mapped);
+        return location;
     }
 
-    public Location GetById(Guid id)
+    public async Task<IEnumerable<Location>> GetAll()
     {
-        throw new NotImplementedException();
+        var locations = await _context.Locations.ToListAsync();
+        return _mapper.Map<List<LocationEntity>, List<Location>>(locations);
+    }
+
+    public async Task<Location?> GetById(long id)
+    {
+        var location = await _context.Locations.FindAsync(id);
+        return location == null ? null : _mapper.Map<LocationEntity, Location>(location);
+    }
+
+    public async Task<int> SaveChangesAsync()
+    {
+        return await _context.SaveChangesAsync();
     }
 }

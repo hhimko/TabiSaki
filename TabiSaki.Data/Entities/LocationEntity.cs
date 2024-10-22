@@ -7,7 +7,7 @@ namespace TabiSaki.Data.Entities;
 internal class LocationEntity
 {
     [Key]
-    public required Guid Id { get; init; }
+    public required long Id { get; init; }
 
     public required double Latitude { get; set; }
 

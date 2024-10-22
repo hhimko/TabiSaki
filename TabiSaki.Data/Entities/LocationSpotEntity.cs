@@ -7,11 +7,11 @@ namespace TabiSaki.Data.Entities;
 internal class LocationSpotEntity
 {
     [Key]
-    public required Guid Id { get; init; }
+    public required long Id { get; init; }
 
     [MaxLength(64)]
     public required string Name { get; set; } = String.Empty;
 
-    public required Guid LocationId { get; init; }
+    public required long LocationId { get; init; }
 
 }

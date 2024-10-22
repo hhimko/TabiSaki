@@ -1,5 +1,5 @@
 ﻿using TabiSaki.Application.Services;
-using TabiSaki.Data.Interfaces;
+using TabiSaki.Data.Repositories.Interfaces;
 using TabiSaki.Domain.Models;
 
 namespace TabiSaki.ApplicationGlue.Services;
@@ -13,12 +13,25 @@ internal class LocationService : ILocationService
     {
         _repository = repository;
     }
-    public IEnumerable<Location> GetAll()
+
+    public async Task<Location?> Create(Location location)
     {
-        return _repository.GetAll();
+        var result = await _repository.Create(location);
+        if (result == null)
+        {
+            return null;
+        }
+
+        await _repository.SaveChangesAsync();
+        return result;
     }
-    public Location GetById(Guid id)
+
+    public async Task<IEnumerable<Location>> GetAll()
     {
-        return _repository.GetById(id);
+        return await _repository.GetAll();
+    }
+    public async Task<Location?> GetById(long id)
+    {
+        return await _repository.GetById(id);
     }
 }

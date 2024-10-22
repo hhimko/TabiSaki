@@ -31,6 +31,12 @@ public partial class Home : ComponentBase
     {
         var latLng = new LatLng(35.8, 139.6);
         await MapViewport.SetViewAsync(latLng, 9);
-        await MapViewport.SetMarkerAsync(new Marker(0, latLng, cssClassName: "test-marker"));
+
+        var locations = await LocationService.GetAll();
+        foreach (var location in locations)
+        {
+            var marker = new Marker(location.Id, new LatLng(location.Latitude, location.Longitude), cssClassName: "test-marker");
+            await MapViewport.SetMarkerAsync(marker);
+        }
     }
 }

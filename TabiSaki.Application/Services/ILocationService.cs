@@ -4,8 +4,10 @@ namespace TabiSaki.Application.Services;
 
 public interface ILocationService
 {
-    public IEnumerable<Location> GetAll();
+    public Task<Location?> Create(Location location);
 
-    public Location GetById(Guid id);
+    public Task<IEnumerable<Location>> GetAll();
+
+    public Task<Location?> GetById(long id);
 
 }

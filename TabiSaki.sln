@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.WebApp", "TabiSaki
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeafletClient", "LeafletClient\LeafletClient.csproj", "{F8CE8E9D-EF94-4AF1-8D8B-295FFCFA2FBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Domain", "TabiSaki.Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Domain", "TabiSaki.Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Application", "TabiSaki.Application\TabiSaki.Application.csproj", "{673C7206-C7C0-45AC-BFCC-977067F97B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Application", "TabiSaki.Application\TabiSaki.Application.csproj", "{673C7206-C7C0-45AC-BFCC-977067F97B15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Data", "TabiSaki.Data\TabiSaki.Data.csproj", "{E008118F-7DBC-4574-AEFD-6DE6AA16EEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Data", "TabiSaki.Data\TabiSaki.Data.csproj", "{E008118F-7DBC-4574-AEFD-6DE6AA16EEDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.ApplicationGlue", "TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj", "{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.ApplicationGlue", "TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj", "{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Services", "TabiSaki.Services\TabiSaki.Services.csproj", "{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,12 @@
 using TabiSaki.ApplicationGlue;
 using TabiSaki.WebApp.Components;
+using TabiSaki.Services.Data;
 
 namespace TabiSaki.WebApp;
 
-internal class Program
+public class Program
 {
-    public static void Main(string[] args)
+    public static async Task Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,10 @@ internal class Program
             .ValidateOnStart();
 
         builder.Services.AddApplicationGlue(builder.Configuration);
+        if (builder.Configuration.GetValue<bool>("UseInMemoryDatabase"))
+        {
+            builder.Services.AddTransient<DataSeederService>();
+        }
 
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
@@ -28,6 +33,14 @@ internal class Program
             app.UseHsts();
         }
 
+        if (app.Configuration.GetValue<bool>("UseInMemoryDatabase"))
+        {
+            await using var scope = app.Services.CreateAsyncScope();
+
+            var seeder = scope.ServiceProvider.GetService<DataSeederService>();
+            await seeder!.SeedSampleDataAsync();
+        }
+
         app.UseHttpsRedirection();
 
         app.UseStaticFiles();
@@ -36,6 +49,6 @@ internal class Program
         app.MapRazorComponents<App>()
             .AddInteractiveServerRenderMode();
 
-        app.Run();
+        await app.RunAsync();
     }
 }
