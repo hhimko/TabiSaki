@@ -1,6 +1,10 @@
 .leaflet-marker-icon.test-marker {
-    background-color: red;
+    background-color: #d00000;
     border-radius: 9999px;
+}
+
+.leaflet-marker-icon.test-marker:hover {
+    background-color: red;
 }
 
 .valid.modified:not([type=checkbox]) {

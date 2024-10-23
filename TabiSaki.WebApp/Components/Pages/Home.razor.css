@@ -4,7 +4,7 @@
     height: 100vh;
     padding: 1rem;
     background-color: #111;
-    gap: 22px;
+    gap: 12px;
 }
 
 #viewport-container {
@@ -18,14 +18,24 @@
     flex-direction: column;
     background-color: #333;
     border-radius: 12px;
-    padding: 12px;
+    padding: 8px;
     flex-grow: 1;
     color: white;
     gap: 8px;
+    overflow-y: auto;
 }
 
 .marker-card {
+    display: flex;
     background-color: #222;
     border-radius: 10px;
-    padding: 6px 10px;
+    padding: 6px 12px;
+    gap: 12px;
+    text-align: start;
+    color: white;
+    border: none;
 }
+
+    .marker-card:hover {
+        background-color: #2B2B2B;
+    }

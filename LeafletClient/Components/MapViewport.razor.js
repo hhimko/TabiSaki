@@ -29,6 +29,7 @@ export function setMarker(ctx, marker) {
 
     const icon = L.divIcon({ className: marker.class });
     const markerLayer = L.marker(marker.latLng, { icon: icon }).addTo(ctx.map);
+    markerLayer.on("click", () => { window.alert(marker.id) });
 
     ctx.markers[marker.id] = markerLayer;
 }
