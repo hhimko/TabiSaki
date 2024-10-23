@@ -17,7 +17,7 @@
         {
             @foreach (var location in _locations)
             {
-                <button class="marker-card marker-@(location.Id)">
+                <button class="marker-card marker-@(location.Id)" @onclick="() => OnMarkerClicked(location)">
                     @{ var spot = location.Spots.FirstOrDefault(defaultValue: null); }
                     @if (spot != null)
                     {

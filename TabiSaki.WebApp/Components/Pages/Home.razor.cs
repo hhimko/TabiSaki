@@ -47,4 +47,10 @@ public partial class Home : ComponentBase
             }
         }
     }
+
+    private async Task OnMarkerClicked(Location location)
+    {
+        var latLng = new LatLng(location.Latitude, location.Longitude);
+        await MapViewport.SetViewAsync(latLng, 13);
+    }
 }
