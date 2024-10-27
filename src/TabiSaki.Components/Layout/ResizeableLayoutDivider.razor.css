@@ -1,0 +1,46 @@
+﻿.layout-separator-container {
+    --handle-size: 16px;
+    display: grid;
+}
+
+.layout-separator-child {
+    overflow: auto;
+}
+
+.layout-separator-handle {
+    position: relative;
+    min-width: var(--handle-size);
+    min-height: var(--handle-size);
+    cursor: w-resize;
+}
+
+.layout-separator-handle:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: calc(50% - 1px);
+    background-color: red;
+    display: none;
+}
+
+.layout-separator-handle.active:after {
+    background-color: blue;
+    display: block;
+}
+
+.layout-separator-handle:hover:after {
+    display: block;
+}
+
+.layout-separator-container.vertical > .layout-separator-handle {
+    cursor: s-resize;
+}
+
+.layout-separator-container.vertical > .layout-separator-handle:after {
+    width: 100%;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 0;
+}
