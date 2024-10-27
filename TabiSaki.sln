@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.WebApp", "TabiSaki.WebApp\TabiSaki.WebApp.csproj", "{F5C9619C-299B-4C35-9966-4D227862B5B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.WebApp", "src\TabiSaki.WebApp\TabiSaki.WebApp.csproj", "{F5C9619C-299B-4C35-9966-4D227862B5B8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeafletClient", "LeafletClient\LeafletClient.csproj", "{F8CE8E9D-EF94-4AF1-8D8B-295FFCFA2FBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeafletClient", "src\LeafletClient\LeafletClient.csproj", "{F8CE8E9D-EF94-4AF1-8D8B-295FFCFA2FBF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Domain", "TabiSaki.Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Domain", "src\TabiSaki.Domain\TabiSaki.Domain.csproj", "{75D064E2-E3A9-426E-B90E-D8471E913D6B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Application", "TabiSaki.Application\TabiSaki.Application.csproj", "{673C7206-C7C0-45AC-BFCC-977067F97B15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Application", "src\TabiSaki.Application\TabiSaki.Application.csproj", "{673C7206-C7C0-45AC-BFCC-977067F97B15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Data", "TabiSaki.Data\TabiSaki.Data.csproj", "{E008118F-7DBC-4574-AEFD-6DE6AA16EEDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Data", "src\TabiSaki.Data\TabiSaki.Data.csproj", "{E008118F-7DBC-4574-AEFD-6DE6AA16EEDC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.ApplicationGlue", "TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj", "{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.ApplicationGlue", "src\TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj", "{EFB44DE4-D67F-4C0C-8072-DF4F103AC5A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Services", "TabiSaki.Services\TabiSaki.Services.csproj", "{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Services", "src\TabiSaki.Services\TabiSaki.Services.csproj", "{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
