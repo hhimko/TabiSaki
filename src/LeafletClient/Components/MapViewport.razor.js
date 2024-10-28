@@ -17,6 +17,11 @@ export function initialize(ctx, containerElement, apiKey, styleId) {
             apiKey: apiKey,
             style: styleId
         }).addTo(ctx.map);
+
+        const resizeObserver = new window.ResizeObserver(() => {
+            ctx.map.invalidateSize();
+        });
+        resizeObserver.observe(containerElement);
     }
 }
 

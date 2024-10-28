@@ -15,7 +15,7 @@ public partial class Home : ComponentBase
     [Inject]
     private ILocationService LocationService { get; init; } = default!;
 
-    private MapViewport MapViewport { get; set; } = default!;
+    private MapViewport? MapViewport { get; set; }
 
     private string MapTilerApiKey => Settings.Value.MapTilerApiKey;
 
@@ -26,7 +26,10 @@ public partial class Home : ComponentBase
     {
         if (firstRender)
         {
-            MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
+            if (MapViewport is not null)
+            {
+                MapViewport.OnMapInitializedAsync += OnMapInitializedAsync;
+            }
 
             _locations = await LocationService.GetAll();
             StateHasChanged();
@@ -36,7 +39,7 @@ public partial class Home : ComponentBase
     private async Task OnMapInitializedAsync()
     {
         var latLng = new LatLng(35.8, 139.6);
-        await MapViewport.SetViewAsync(latLng, 9);
+        await MapViewport!.SetViewAsync(latLng, 9);
 
         if (_locations is not null)
         {
@@ -50,7 +53,10 @@ public partial class Home : ComponentBase
 
     private async Task OnMarkerClicked(Location location)
     {
-        var latLng = new LatLng(location.Latitude, location.Longitude);
-        await MapViewport.SetViewAsync(latLng, 13);
+        if (MapViewport is not null)
+        {
+            var latLng = new LatLng(location.Latitude, location.Longitude);
+            await MapViewport.SetViewAsync(latLng, 13);
+        }
     }
 }

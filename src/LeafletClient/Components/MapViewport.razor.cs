@@ -32,7 +32,7 @@ public partial class MapViewport : ComponentBase, IAsyncDisposable
         if (firstRender)
         {
             _module = await JSRuntime.InvokeAsync<IJSObjectReference>(
-                "import", "./_content/LeafletClient/Components/MapViewport.razor.js"
+                "import", $"./_content/LeafletClient/Components/MapViewport.razor.js?v={DateTime.Now}"
             );
 
             await InitializeModuleAsync();

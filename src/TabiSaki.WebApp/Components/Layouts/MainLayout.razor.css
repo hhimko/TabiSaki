@@ -1,5 +1,28 @@
-header {
+#body-grid-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "nav header"
+        "nav main"
+        "nav footer";
+    gap: 1rem;
+}
 
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
 }
 
 #blazor-error-ui {

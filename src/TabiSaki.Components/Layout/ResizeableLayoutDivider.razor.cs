@@ -58,7 +58,7 @@ public partial class ResizeableLayoutDivider : ComponentBase, IAsyncDisposable
         if (firstRender)
         {
             _module = await JSRuntime.InvokeAsync<IJSObjectReference>(
-                "import", "./_content/TabiSaki.Components/Layout/ResizeableLayoutDivider.razor.js"
+                "import", $"./_content/TabiSaki.Components/Layout/ResizeableLayoutDivider.razor.js?v={DateTime.Now}"
             );
 
             await _module!.InvokeVoidAsync(

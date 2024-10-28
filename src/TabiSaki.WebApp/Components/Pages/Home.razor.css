@@ -1,20 +1,17 @@
 ﻿#main-section {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
     background-color: #111;
-    gap: 12px;
 }
 
-#viewport-container {
-    width: 70%;
+.divider-section {
+    position: absolute;
+    background-color: #2b2b2b;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #marker-container {
     display: flex;
+    height: 100%;
     flex-direction: column;
     background-color: #333;
     border-radius: 12px;
@@ -34,8 +31,9 @@
     text-align: start;
     color: white;
     border: none;
+    min-width: 250px;
 }
 
-    .marker-card:hover {
-        background-color: #2B2B2B;
-    }
+.marker-card:hover {
+    background-color: #2B2B2B;
+}

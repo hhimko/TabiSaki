@@ -1,46 +1,64 @@
 ﻿@page "/"
+@using TabiSaki.Components.Layout
 @using LeafletClient.Components
 
 <PageTitle>Home</PageTitle>
 
-<section id="main-section">
-    <div id="viewport-container">
-        <MapViewport MapTilerApiKey="@MapTilerApiKey" MapTilerStyle="66e6da85-1e0d-40c5-a498-f5f9ff323a5a" @ref="MapViewport" />
-    </div>
 
-    <div id="marker-container">
-        @if (_locations is null)
-        {
-            <p>Loading...</p>
-        }
-        else
-        {
-            @foreach (var location in _locations)
-            {
-                <div class="marker-card marker-@(location.Id)" @onclick="() => OnMarkerClicked(location)">
-                    @{ var spot = location.Spots.FirstOrDefault(defaultValue: null); }
-                    @if (spot != null)
+<ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Horizontal" DefaultRatio="0.7f" class="w-100 h-100">
+    <TopLeftChild>
+        <ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Vertical" DefaultRatio="0.7f" class="w-100 h-100">
+            <TopLeftChild>
+                <section class="divider-section w-100 h-100"> 
+                    <MapViewport MapTilerApiKey="@MapTilerApiKey" MapTilerStyle="66e6da85-1e0d-40c5-a498-f5f9ff323a5a" @ref="MapViewport"/>
+                </section>
+            </TopLeftChild>
+            <BottomRightChild>
+                <section class="divider-section p-3 w-100 h-100">
+
+                </section>
+            </BottomRightChild>
+        </ResizeableLayoutDivider>
+    </TopLeftChild>
+    <BottomRightChild>
+        <section class="divider-section p-3 w-100 h-100">
+            <div class="d-flex flex-column gap-2">
+                @if (_locations is null)
+                {
+                    <p>Loading...</p>
+                }
+                else
+                {
+                    @foreach (var location in _locations)
                     {
-                        <small style="opacity: 0.5">
-                            @spot.Id
-                        </small>
-                        <div style="flex-grow: 1;">
-                            <p style="margin: 0;">@spot.Name</p>
-                            <p style="margin: 0; opacity: 0.5;">@spot.Description</p>
-                        </div>
-                        <div>
-                            @if (spot.ExternalUrl is not null)
+                        <div class="marker-card marker-@(location.Id)" @onclick="() => OnMarkerClicked(location)">
+                            @{
+                                var spot = location.Spots.FirstOrDefault(defaultValue: null);
+                            }
+                            @if (spot != null)
                             {
-                                <a href="@spot.ExternalUrl" target=”_blank”>
-                                    <?xml version="1.0"?>
+                                <small style="opacity: 0.5">
+                                    @spot.Id
+                                </small>
+                                <div style="flex-grow: 1;">
+                                    <p style="margin: 0;">@spot.Name</p>
+                                    <p style="margin: 0; opacity: 0.5;">@spot.Description</p>
+                                </div>
+                                <div>
+                                    @if (spot.ExternalUrl is not null)
+                                    {
+                                        <a href="@spot.ExternalUrl" target=”_blank”>
+                                            <?xml version="1.0"?>
 
-                                    <svg fill="none" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
-                                </a>
+                                            <svg fill="none" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+                                        </a>
+                                    }
+                                </div>
                             }
                         </div>
                     }
-                </div>
-            }
-        }
-    </div>
-</section>
+                }
+            </div>
+        </section>
+    </BottomRightChild>
+</ResizeableLayoutDivider>
