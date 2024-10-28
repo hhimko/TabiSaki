@@ -1,18 +1,19 @@
 export function initialize(containerElement) {
-    const handleElement = containerElement.querySelector(".layout-separator-handle");
+    const handleElement = containerElement.querySelector(":scope > .layout-separator-handle");
     const isHorizontal = containerElement.classList.contains("horizontal");
 
-    const firstChildElement = containerElement.querySelector(".layout-separator-child:first-child");
     if (isHorizontal) {
+        const firstChildElement = containerElement.querySelector(":scope > .layout-separator-child:first-child");
         const initialWidth = firstChildElement.getBoundingClientRect().width;
         firstChildElement.style.width = initialWidth + "px";
 
         containerElement.style.gridTemplateColumns = "min-content min-content 1fr";
     } else {
-        const initialHeight = firstChildElement.getBoundingClientRect().height;
-        firstChildElement.style.height = initialHeight + "px";
+        const secondChildElement = containerElement.querySelector(":scope > .layout-separator-child:last-child");
+        const initialHeight = secondChildElement.getBoundingClientRect().height;
+        secondChildElement.style.height = initialHeight + "px";
 
-        containerElement.style.gridTemplateRows = "min-content min-content 1fr";
+        containerElement.style.gridTemplateRows = "1fr min-content min-content";
     }
 
     handleElement.addEventListener("mousedown", function (event) {
@@ -40,15 +41,13 @@ export function initialize(containerElement) {
 }
 
 function createMouseMoveEventHandler(containerElement, handleElement, isHorizontal, startClientPos) {
-    const firstChildElement = containerElement.querySelector(".layout-separator-child:first-child");
-    const secondChildElement = containerElement.querySelector(".layout-separator-child:last-child");
-
     const handleRect = handleElement.getBoundingClientRect();
     const offsetX = startClientPos.x - handleRect.left;
     const offsetY = startClientPos.y - handleRect.top;
 
     if (isHorizontal) {
-        return  function (event) {
+        const firstChildElement = containerElement.querySelector(":scope > .layout-separator-child:first-child");
+        return function (event) {
             event.preventDefault();
             const x = event.x;
 
@@ -59,6 +58,7 @@ function createMouseMoveEventHandler(containerElement, handleElement, isHorizont
             firstChildElement.style.width = width + "px";
         }
     } else {
+        const secondChildElement = containerElement.querySelector(":scope > .layout-separator-child:last-child");
         return function (event) {
             event.preventDefault();
             const y = event.y;
@@ -67,7 +67,7 @@ function createMouseMoveEventHandler(containerElement, handleElement, isHorizont
             const maxHeight = containerRect.height - handleRect.height;
 
             const height = Math.min(Math.max(y - offsetY - containerRect.top, 0), maxHeight);
-            firstChildElement.style.height = height + "px";
+            secondChildElement.style.height = maxHeight - height + "px";
         }
     }
 }

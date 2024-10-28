@@ -1,10 +1,10 @@
 ﻿.layout-separator-container {
-    --handle-size: 16px;
+    --handle-size: 1rem;
     display: grid;
 }
 
 .layout-separator-child {
-    overflow: auto;
+    overflow: hidden;
 }
 
 .layout-separator-handle {

@@ -1,9 +1,8 @@
-﻿<div @ref="_containerElement" class="layout-separator-container @OrientationClass" style="@DefaultGridTemplate">
+﻿<div @ref="_containerElement" @attributes="_attributes">
     <div class="layout-separator-child">
         @TopLeftChild
     </div>
-    <div class="layout-separator-handle">
-    </div>
+    <div class="layout-separator-handle"></div>
     <div class="layout-separator-child">
         @BottomRightChild
     </div>
