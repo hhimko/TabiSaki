@@ -1,0 +1,13 @@
+﻿[
+  {
+    "outputFile": "wwwroot/tabisaki-bs.css",
+    "inputFile": "wwwroot/scss/tabisaki-bs.scss",
+    "minify": {
+      "enabled": true
+    },
+    "includeInProject": true,
+    "options": {
+      "sourceMap": false
+    }
+  }
+]
