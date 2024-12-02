@@ -813,5 +813,21 @@ public class DataSeederService
                 }
             ]
         });
+
+        await _locationService.Create(new Location
+        {
+            Id = 51,
+            Latitude = 35.2449741,
+            Longitude = 139.051309,
+            Spots = [
+                new LocationSpot
+                {
+                    Id = 51,
+                    Name = "The Hakone Open-Air Museum",
+                    Description = "Hakone",
+                    ExternalUrl = "https://maps.app.goo.gl/Dz4gwKyLzk98P8Lx7"
+                }
+            ]
+        });
     }
 }

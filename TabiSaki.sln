@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.ApplicationGlue", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Services", "src\TabiSaki.Services\TabiSaki.Services.csproj", "{1CEEB3AE-EA82-4BF8-925C-36C70D7645BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabiSaki.Components", "src\TabiSaki.Components\TabiSaki.Components.csproj", "{58AF8E48-0C66-4537-8E11-CE396A1EB7C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TabiSaki.Components", "src\TabiSaki.Components\TabiSaki.Components.csproj", "{58AF8E48-0C66-4537-8E11-CE396A1EB7C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

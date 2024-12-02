@@ -18,9 +18,17 @@ export function initialize(ctx, containerElement, apiKey, styleId) {
             style: styleId
         }).addTo(ctx.map);
 
-        const resizeObserver = new window.ResizeObserver(() => {
+        function throttle(f, delay) {
+            var timer = 0;
+            return function (...args) {
+                clearTimeout(timer);
+                timer = setTimeout(() => f.apply(this, args), delay);
+            }
+        }
+
+        const resizeObserver = new window.ResizeObserver(throttle(() => {
             ctx.map.invalidateSize();
-        });
+        }, 50));
         resizeObserver.observe(containerElement);
     }
 }

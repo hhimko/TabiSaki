@@ -2,12 +2,12 @@
 @using TabiSaki.Components.Layout
 @using LeafletClient.Components
 
-<PageTitle>Home</PageTitle>
+<PageTitle>TabiSaki</PageTitle>
 
 
-<ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Horizontal" DefaultRatio="0.7f" class="w-100 h-100">
+<ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Horizontal" DefaultRatio="0.75f" class="w-100 h-100">
     <TopLeftChild>
-        <ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Vertical" DefaultRatio="0.7f" class="w-100 h-100">
+        <ResizeableLayoutDivider Orientation="ResizeableLayoutDivider.LayoutOrientation.Vertical" DefaultRatio="0.75f" class="w-100 h-100">
             <TopLeftChild>
                 <section class="divider-section w-100 h-100"> 
                     <MapViewport MapTilerApiKey="@MapTilerApiKey" MapTilerStyle="66e6da85-1e0d-40c5-a498-f5f9ff323a5a" @ref="MapViewport"/>
@@ -15,7 +15,21 @@
             </TopLeftChild>
             <BottomRightChild>
                 <section class="divider-section p-3 w-100 h-100">
+                    @* <TimelineComponent class="w-100 h-100" /> *@
+                    <div class="d-flex h-100">
+                        @for (var i = 0; i < 23; i++)
+                        {
+                            <div class="flex-grow-1" style="min-width: 55px;">
+                                <div class="">
 
+                                </div>
+
+                                <div class="text-center small text-white">
+                                    @DateOnly.FromDayNumber(739243 + i).ToString("dd/MM/yy")
+                                </div>
+                            </div>
+                        }
+                    </div>
                 </section>
             </BottomRightChild>
         </ResizeableLayoutDivider>
