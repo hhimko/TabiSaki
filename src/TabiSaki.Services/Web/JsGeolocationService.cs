@@ -6,12 +6,12 @@ public class JsGeolocationService : IGeolocationService, IAsyncDisposable
 {
     public async Task<bool> IsSupported()
     {
-        throw new NotImplementedException();
+        return await Task.FromResult(false);
     }
 
     public async Task<GeolocationResult> GetDeviceLocation()
     {
-        throw new NotImplementedException();
+        return await Task.FromResult(new GeolocationResult("not implemented"));
     }
 
     public ValueTask DisposeAsync()

@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace TabiSaki.Domain.Models;
 
-namespace TabiSaki.Domain.Models;
-
-public class LocationSpot
+public class Place
 {
     public required long Id { get; init; }
 
@@ -11,5 +9,4 @@ public class LocationSpot
     public string Description { get; set; } = String.Empty;
 
     public string? ExternalUrl { get; set; }
-
 }

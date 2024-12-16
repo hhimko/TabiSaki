@@ -1,9 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TabiSaki.Data.Database;
 using TabiSaki.Data.Entities;
 using TabiSaki.Data.Repositories.Interfaces;
 using TabiSaki.Domain.Models;
+using AutoMapper;
 
 namespace TabiSaki.Data.Repositories;
 
@@ -11,6 +11,7 @@ internal class LocationRepository : ILocationRepository
 {
     private readonly AppDbContext _context;
     private readonly IMapper _mapper;
+
 
     public LocationRepository(AppDbContext context, IMapper mapper)
     {
@@ -28,7 +29,7 @@ internal class LocationRepository : ILocationRepository
     public async Task<IEnumerable<Location>> GetAll()
     {
         var locations = await _context.Locations
-            .Include(l => l.Spots)
+            .Include(l => l.Places)
             .ToListAsync();
 
         return _mapper.Map<List<LocationEntity>, List<Location>>(locations);
@@ -37,7 +38,7 @@ internal class LocationRepository : ILocationRepository
     public async Task<Location?> GetById(long id)
     {
         var location = await _context.Locations
-            .Include(l => l.Spots)
+            .Include(l => l.Places)
             .FirstOrDefaultAsync(l => l.Id == id);
 
         return location == null ? null : _mapper.Map<LocationEntity, Location>(location);

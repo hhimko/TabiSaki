@@ -4,10 +4,15 @@ public class Location
 {
     public required long Id { get; init; }
 
-    public required double Latitude { get; set; }
+    /// <summary>
+    /// Latitude in degrees. Must be in [-90, 90] range.
+    /// </summary>
+    public required double Latitude { get; init; }
 
-    public required double Longitude { get; set; }
+    /// <summary>
+    /// Longitude in degrees. Must be in [-180, 180] range.
+    /// </summary>
+    public required double Longitude { get; init; }
 
-    public ICollection<LocationSpot> Spots { get; set; } = [];
-
+    public IEnumerable<Place> Places { get; init; } = [];
 }

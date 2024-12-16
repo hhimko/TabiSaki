@@ -4,15 +4,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TabiSaki.Data.Entities;
 
 [Table("Locations")]
-internal class LocationEntity
+public class LocationEntity
 {
     [Key]
     public required long Id { get; init; }
 
-    public required double Latitude { get; set; }
+    [Required, Range(-90.0, 90.0)]
+    public required double Latitude { get; init; }
 
-    public required double Longitude { get; set; }
+    [Required, Range(-180.0, 180.0)]
+    public required double Longitude { get; init; }
 
-    public virtual ICollection<LocationSpotEntity> Spots { get; set; } = [];
-
+    public virtual ICollection<PlaceEntity> Places { get; init; } = [];
 }

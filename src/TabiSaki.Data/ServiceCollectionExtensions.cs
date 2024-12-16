@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
-using TabiSaki.Data.Database;
 using TabiSaki.Data.Repositories;
 using TabiSaki.Data.Repositories.Interfaces;
+using TabiSaki.Data.Database;
 
 namespace TabiSaki.Data;
 
@@ -26,13 +26,10 @@ public static class ServiceCollectionExtensions
                 options.UseNpgsql(connectionString));
         }
         
-
-        services.AddRepositories(configuration);
-
         return services;
     }
 
-    private static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddTransient<ILocationRepository, LocationRepository>();
 

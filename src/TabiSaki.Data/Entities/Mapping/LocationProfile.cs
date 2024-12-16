@@ -1,7 +1,7 @@
 ﻿using TabiSaki.Domain.Models;
 using AutoMapper;
 
-namespace TabiSaki.Data.Entities.Profiles;
+namespace TabiSaki.Data.Entities.Mapping;
 
 internal class LocationProfile : Profile
 {

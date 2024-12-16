@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\LeafletClient\LeafletClient.csproj" />
     <ProjectReference Include="..\TabiSaki.ApplicationGlue\TabiSaki.ApplicationGlue.csproj" />
-    <ProjectReference Include="..\TabiSaki.Application\TabiSaki.Application.csproj" />
     <ProjectReference Include="..\TabiSaki.Components\TabiSaki.Components.csproj" />
     <ProjectReference Include="..\TabiSaki.Services\TabiSaki.Services.csproj" />
   </ItemGroup>

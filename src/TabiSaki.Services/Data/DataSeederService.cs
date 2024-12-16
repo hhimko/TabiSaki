@@ -19,8 +19,8 @@ public class DataSeederService
             Id = 1,
             Latitude = 35.6622173,
             Longitude = 139.71667,
-            Spots = [ 
-                new LocationSpot
+            Places = [ 
+                new Place
                 {
                     Id = 1, 
                     Name = "Nezu Museum",
@@ -35,8 +35,8 @@ public class DataSeederService
             Id = 2,
             Latitude = 35.6604621,
             Longitude = 139.7292785,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 2,
                     Name = "teamLab Borderless",
@@ -51,8 +51,8 @@ public class DataSeederService
             Id = 3,
             Latitude = 35.694334,
             Longitude = 139.7027175,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 3,
                     Name = "Samurai Restaurant",
@@ -67,8 +67,8 @@ public class DataSeederService
             Id = 4,
             Latitude = 35.6851806,
             Longitude = 139.7074768,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 4,
                     Name = "Gyoen National Garden",
@@ -83,8 +83,8 @@ public class DataSeederService
             Id = 5,
             Latitude = 35.6746738,
             Longitude = 139.6980499,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 5,
                     Name = "Meiji Jingu",
@@ -99,8 +99,8 @@ public class DataSeederService
             Id = 6,
             Latitude = 35.6620232,
             Longitude = 139.6971028,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 6,
                     Name = "Shibuya Parco",
@@ -115,8 +115,8 @@ public class DataSeederService
             Id = 7,
             Latitude = 35.660518,
             Longitude = 139.6953033,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 7,
                     Name = "MEGA Don Quijote",
@@ -131,8 +131,8 @@ public class DataSeederService
             Id = 8,
             Latitude = 35.649125,
             Longitude = 139.787199,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 8,
                     Name = "teamLab Planets",
@@ -147,8 +147,8 @@ public class DataSeederService
             Id = 9,
             Latitude = 35.6512604,
             Longitude = 139.8268051,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 9,
                     Name = "Yumenoshima Tropical Greenhouse Dome",
@@ -163,8 +163,8 @@ public class DataSeederService
             Id = 10,
             Latitude = 35.6811902,
             Longitude = 139.7980172,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 10,
                     Name = "Fukagawa Edo Museum",
@@ -179,8 +179,8 @@ public class DataSeederService
             Id = 11,
             Latitude = 35.6933343,
             Longitude = 139.7471327,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 11,
                     Name = "Nippon Budokan",
@@ -195,8 +195,8 @@ public class DataSeederService
             Id = 12,
             Latitude = 35.6851793,
             Longitude = 139.7502246,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 12,
                     Name = "Imperial Palace",
@@ -211,8 +211,8 @@ public class DataSeederService
             Id = 13,
             Latitude = 35.6812405,
             Longitude = 139.7645499,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 13,
                     Name = "Tokyo Station",
@@ -227,8 +227,8 @@ public class DataSeederService
             Id = 14,
             Latitude = 35.6649228,
             Longitude = 139.7676446,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 14,
                     Name = "Tsukiji Market",
@@ -243,8 +243,8 @@ public class DataSeederService
             Id = 15,
             Latitude = 35.6649228,
             Longitude = 139.7676446,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 15,
                     Name = "Tsukiji Market",
@@ -259,8 +259,8 @@ public class DataSeederService
             Id = 16,
             Latitude = 35.6707286,
             Longitude = 139.7625709,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 16,
                     Name = "Ginza",
@@ -275,8 +275,8 @@ public class DataSeederService
             Id = 17,
             Latitude = 35.71476,
             Longitude = 139.7708563,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 17,
                     Name = "Ueno Park",
@@ -291,8 +291,8 @@ public class DataSeederService
             Id = 18,
             Latitude = 35.7180307,
             Longitude = 139.7741488,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 18,
                     Name = "Tokyo National Museum",
@@ -307,8 +307,8 @@ public class DataSeederService
             Id = 19,
             Latitude = 35.7147694,
             Longitude = 139.7940804,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 19,
                     Name = "Sensō-ji",
@@ -323,8 +323,8 @@ public class DataSeederService
             Id = 20,
             Latitude = 35.6963356,
             Longitude = 139.7978391,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 20,
                     Name = "The Sumida Hokusai Museum",
@@ -339,8 +339,8 @@ public class DataSeederService
             Id = 21,
             Latitude = 35.7100627,
             Longitude = 139.8107004,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 21,
                     Name = "Tokyo Skytree",
@@ -355,8 +355,8 @@ public class DataSeederService
             Id = 22,
             Latitude = 35.7099344,
             Longitude = 139.8070106,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 22,
                     Name = "Sumida Aquarium",
@@ -371,8 +371,8 @@ public class DataSeederService
             Id = 23,
             Latitude = 35.6997476,
             Longitude = 139.5737018,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 23,
                     Name = "Inokashira Park",
@@ -387,8 +387,8 @@ public class DataSeederService
             Id = 24,
             Latitude = 35.7311486,
             Longitude = 139.7128843,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 24,
                     Name = "Animate main store",
@@ -403,8 +403,8 @@ public class DataSeederService
             Id = 25,
             Latitude = 35.7289297,
             Longitude = 139.7175824,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 25,
                     Name = "Sunshine Aquarium",
@@ -419,8 +419,8 @@ public class DataSeederService
             Id = 26,
             Latitude = 35.6488167,
             Longitude = 139.6449061,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 26,
                     Name = "Gōtokuji Temple",
@@ -435,8 +435,8 @@ public class DataSeederService
             Id = 27,
             Latitude = 35.6668493,
             Longitude = 139.6085858,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 27,
                     Name = "Setagaya Literary Museum",
@@ -451,8 +451,8 @@ public class DataSeederService
             Id = 28,
             Latitude = 35.7165647,
             Longitude = 139.5151361,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 28,
                     Name = "Koganei Park",
@@ -467,8 +467,8 @@ public class DataSeederService
             Id = 29,
             Latitude = 35.7192336,
             Longitude = 139.5114704,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 29,
                     Name = "Edo-Tokyo Open Air Architectural Museum",
@@ -483,8 +483,8 @@ public class DataSeederService
             Id = 30,
             Latitude = 35.6322148,
             Longitude = 139.7133811,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 30,
                     Name = "Hotel Gajoen Art Gallery",
@@ -499,8 +499,8 @@ public class DataSeederService
             Id = 31,
             Latitude = 35.6329007,
             Longitude = 139.8778194,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 31,
                     Name = "Tokyo Disneyland",
@@ -515,8 +515,8 @@ public class DataSeederService
             Id = 32,
             Latitude = 35.6552434,
             Longitude = 139.8985176,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 32,
                     Name = "Urayasu City Folk Museum",
@@ -531,8 +531,8 @@ public class DataSeederService
             Id = 33,
             Latitude = 35.8709843,
             Longitude = 139.3247549,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 33,
                     Name = "MOOMINVALLEY PARK",
@@ -547,8 +547,8 @@ public class DataSeederService
             Id = 34,
             Latitude = 35.624539,
             Longitude = 139.4292877,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 34,
                     Name = "Sanrio Puroland",
@@ -563,8 +563,8 @@ public class DataSeederService
             Id = 35,
             Latitude = 35.4868018,
             Longitude = 138.7852424,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 35,
                     Name = "Fuji-Q Highland",
@@ -579,8 +579,8 @@ public class DataSeederService
             Id = 36,
             Latitude = 36.7580921,
             Longitude = 139.5961717,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 36,
                     Name = "Nikkō Tōshogū",
@@ -595,8 +595,8 @@ public class DataSeederService
             Id = 37,
             Latitude = 36.7534069,
             Longitude = 139.5981985,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 37,
                     Name = "Shinkyō Bridge",
@@ -611,8 +611,8 @@ public class DataSeederService
             Id = 38,
             Latitude = 36.7727497,
             Longitude = 139.6947831,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 38,
                     Name = "Edo Wonderland Nikko Edomura",
@@ -627,8 +627,8 @@ public class DataSeederService
             Id = 39,
             Latitude = 35.6962306,
             Longitude = 139.5703883,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 39,
                     Name = "Ghibli Museum",
@@ -643,8 +643,8 @@ public class DataSeederService
             Id = 40,
             Latitude = 35.7035771,
             Longitude = 139.5790183,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 40,
                     Name = "Harmonica Yokocho",
@@ -659,8 +659,8 @@ public class DataSeederService
             Id = 41,
             Latitude = 35.7137096,
             Longitude = 139.7942256,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 41,
                     Name = "Asakusa Koji",
@@ -675,8 +675,8 @@ public class DataSeederService
             Id = 42,
             Latitude = 35.6929594,
             Longitude = 139.6995019,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 42,
                     Name = "Omoide Yokocho",
@@ -691,8 +691,8 @@ public class DataSeederService
             Id = 43,
             Latitude = 35.6940739,
             Longitude = 139.7047277,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 43,
                     Name = "Shinjuku Golden-Gai",
@@ -707,8 +707,8 @@ public class DataSeederService
             Id = 44,
             Latitude = 35.9235197,
             Longitude = 139.4828118,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 44,
                     Name = "Kurazukuri Street",
@@ -723,8 +723,8 @@ public class DataSeederService
             Id = 45,
             Latitude = 35.9250453,
             Longitude = 139.4810888,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 45,
                     Name = "Kashiya Yokocho",
@@ -739,8 +739,8 @@ public class DataSeederService
             Id = 46,
             Latitude = 35.7976482,
             Longitude = 139.5075734,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 46,
                     Name = "Kadokawa Musashino Museum",
@@ -755,8 +755,8 @@ public class DataSeederService
             Id = 47,
             Latitude = 35.7243029,
             Longitude = 139.6860927,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 47,
                     Name = "Tokiwaso Manga Museum",
@@ -771,8 +771,8 @@ public class DataSeederService
             Id = 48,
             Latitude = 35.3168206,
             Longitude = 139.5356567,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 48,
                     Name = "Kotoku-in",
@@ -787,8 +787,8 @@ public class DataSeederService
             Id = 49,
             Latitude = 35.3199569,
             Longitude = 139.5692115,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 49,
                     Name = "Hokoku-ji",
@@ -803,8 +803,8 @@ public class DataSeederService
             Id = 50,
             Latitude = 35.312455,
             Longitude = 139.5330366,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 50,
                     Name = "Hasedera",
@@ -819,8 +819,8 @@ public class DataSeederService
             Id = 51,
             Latitude = 35.2449741,
             Longitude = 139.051309,
-            Spots = [
-                new LocationSpot
+            Places = [
+                new Place
                 {
                     Id = 51,
                     Name = "The Hakone Open-Air Museum",
