@@ -9,5 +9,4 @@ public interface ILocationService
     public Task<IEnumerable<Location>> GetAll();
 
     public Task<Location?> GetById(long id);
-
 }

@@ -32,6 +32,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddTransient<ILocationRepository, LocationRepository>();
+        services.AddTransient<ITripRepository, TripRepository>();
 
         return services;
     }

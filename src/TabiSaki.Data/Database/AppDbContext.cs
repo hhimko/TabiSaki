@@ -8,6 +8,7 @@ namespace TabiSaki.Data.Database;
 internal class AppDbContext : DbContext
 {
     public DbSet<LocationEntity> Locations { get; init; }
+    public DbSet<TripEntity> Trips { get; init; }
 
 
     public AppDbContext(DbContextOptions<AppDbContext> options)

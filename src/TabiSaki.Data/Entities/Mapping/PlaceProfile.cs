@@ -3,9 +3,9 @@ using AutoMapper;
 
 namespace TabiSaki.Data.Entities.Mapping;
 
-internal class LocationSpotProfile : Profile
+internal class PlaceProfile : Profile
 {
-    public LocationSpotProfile()
+    public PlaceProfile()
     {
         CreateMap<PlaceEntity, Place>();
         CreateMap<Place, PlaceEntity>();

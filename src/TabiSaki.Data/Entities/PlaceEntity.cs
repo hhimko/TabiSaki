@@ -10,10 +10,10 @@ public class PlaceEntity
     public required long Id { get; init; }
 
     [MaxLength(64)]
-    public required string Name { get; init; } = String.Empty;
+    public required string Name { get; init; }
 
     [MaxLength(256)]
-    public required string Description { get; init; } = String.Empty;
+    public required string Description { get; init; }
 
     [MaxLength(256)]
     public string? ExternalUrl { get; init; }
